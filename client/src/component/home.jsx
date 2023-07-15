@@ -10,9 +10,11 @@ export default function Home() {
         const heading = document.getElementById("heading")
         const image = document.getElementById("image")
         const value = window.scrollY
-
-        heading.style.marginTop = value * 1.5 +"px";
-        // image.style.marginTop = value * 1.1 +"px";
+        if(heading){
+            heading.style.marginTop = value * 1.5 +"px";
+        }
+      
+      
         
 
     })
@@ -23,7 +25,7 @@ export default function Home() {
     <div className='relative flex w-full  h-screen overflow-auto' >
         <div className= ' w-[50%] flex flex-col justify-center items-center h-[500px]  overflow-hidden' style={{backgroundColor:"#0099ff"}}  >
             {/* <div><LogoSvg/></div> */}
-            <h1  id='heading' className='text-white text-[32px] font-bold  trasition-all  hover:text-pink-200 '> Read today news feed</h1>
+            <h1  id='heading' className='text-white text-[32px] font-bold  transition-all  hover:text-pink-200 '> Read today news feed</h1>
             <p className='px-4 text-slate-200'>we alway try to feed letest new around world and stay updated to you.... </p>
             <p className='px-4 text-slate-200'>we provided nnews update regarding <b>sports</b> ,<b>tecnology</b> <b>,helth</b> <b>,business</b> <b>,bollywood</b> </p>
             <p className='text-slate-200'>stay tune us....</p>

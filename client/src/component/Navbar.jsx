@@ -19,10 +19,7 @@ export default function Navbar() {
             to="/home"
             className={({isActive})=> isActive ? "text-Orange-400 px-[20px] py-[5px] bg-blue-400 rounded-full hover:text-black" : "text-white hover:text-black"}
             >Home</NavLink>
-            <NavLink
-            to="/home"
-            className={({isActive})=> isActive ? "text-Orange-400 px-[20px] py-[5px] bg-blue-400 rounded-full hover:text-black" : "text-white hover:text-black"}
-            >Home2</NavLink>
+           
               <NavLink
             to="/blogs"
             className={({isActive})=> isActive ? "text-Orange-400 px-[20px] py-[5px] bg-blue-400 rounded-full hover:text-black" : "text-white hover:text-black"}
