@@ -6,6 +6,7 @@ import  {channelValidation}  from "./validation/channel.mjs";
 import {ChannelModal,LetestNewsModal,RoleModal} from "./Modal/channel.mjs";
 import * as yup from "yup";
 import { schema } from "./validation/channel.mjs";
+import fs from "fs"
 // import RegisterModal from "./Modal/registerModal.mjs";
 const app = express();
 app.use(express.urlencoded({extended: false}));
@@ -93,10 +94,27 @@ app.post("/register",channelValidation(schema),(req,res,next)=>{
 })
 
 app.post("/role",(req,res)=>{
-  console.log(req.body)
+  console.log(JSON.stringify( req.body))
 
-res.status(200).json({status:"sucssesfully role set",data:req.body})
 
+fs.writeFile("data/role.json",JSON.stringify(req.body),((err)=>{
+  console.log("data",data)
+   if(err){
+    res.status(400).json({status:"api fail",data:err,code:400})
+   }{
+    res.status(200).json({status:"sucssesfully role set",data:req.body,code:200})
+   }
+}))
+
+})
+app.get("/restriction",(req,res)=>{
+  fs.readFile("data/role.json","utf-8",(err,data)=>{
+      if(err){
+        res.status(400).json({status:"api fail to load", data:err})
+      }{
+        res.status(200).json({status:"api successfully loaded",data:JSON.parse(data)})
+      }
+  })
 
 })
 
