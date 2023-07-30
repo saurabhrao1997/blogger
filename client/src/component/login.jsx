@@ -38,7 +38,7 @@ export default function Login() {
   }
     setBackEndData(response2)
     response2?.data?.name && Navigate("/blogs")
-
+   window.location.reload()
 
     
     }

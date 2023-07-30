@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React ,{useEffect,useState,createContext,useContext} from 'react'
+import { RollContext } from './ApiContext/createContext'
+import RestrictionPage from './RestrictionPage'
 import Modal from './modal';
 import { useNavigate,NavLink } from 'react-router-dom'
 export default function EditBlogs() {
+    const aa = useContext(RollContext);
+    const user = localStorage.getItem("user")
+    console.log("aa restriction home",aa,user)
     const [form,setForm] = useState({})
     const [showModal,setShowModal] = useState(false)
     const navigate = useNavigate()
@@ -40,6 +45,8 @@ export default function EditBlogs() {
 
 
   return (
+    <>
+    { aa?.editblog === true ?
     <div className='w-full h-screen overflow-scroll flex justify-center items-center'>
         
             
@@ -74,6 +81,7 @@ export default function EditBlogs() {
         </form> 
         {showModal &&  <Modal massege={"blog successfully created"} setShowModal={setShowModal} onClick={()=>{navigate("/")}}/>}
 
-    </div>
+    </div> : <RestrictionPage/>}
+    </>
   )
 }

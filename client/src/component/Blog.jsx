@@ -1,7 +1,13 @@
-import React,{useEffect, useState} from 'react'
+
+import React ,{useEffect,useState,createContext,useContext} from 'react'
+import { RollContext } from './ApiContext/createContext'
+import RestrictionPage from './RestrictionPage'
 import { useNavigate } from 'react-router-dom'
 
 export default function Blog() {
+  const aa = useContext(RollContext);
+  const user = localStorage.getItem("user")
+  console.log("aa restriction home",aa,user)
   const [backendData,setBackEndData] = useState({});
  const [newTitle,setNewTilte] = useState("Bollywood");
  const [letstNews,setLetestNews] = useState([])
@@ -34,6 +40,9 @@ console.log("news",letstNews)
 
     const newList = ["Bollywood","Sport","Technology","Helth","Business"]
   return (
+    <>
+    {aa?.blogs === true ?
+
     <div className="flex flex-col  items-center">
       <h1 className="text-center font-bold py-2 text-[24px]">Blogs</h1>
 
@@ -78,6 +87,7 @@ console.log("news",letstNews)
           );
         })}
       </div>
-    </div>
+    </div>:<RestrictionPage/>}
+  </>
   );
 }

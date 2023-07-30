@@ -3,7 +3,7 @@ import { useNavigate,NavLink } from 'react-router-dom'
 import Modal from './modal';
 
 export default function Register() {
-          const navigate =        useNavigate()
+          const navigate =  useNavigate()
     const [register,setRegister] = useState({})
     const [showModal,setShowModal] = useState(false)
 

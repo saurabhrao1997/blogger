@@ -25,9 +25,9 @@ export default function Navbar() {
             className={({isActive})=> isActive ? "text-Orange-400 px-[20px] py-[5px] bg-blue-400 rounded-full hover:text-black" : "text-white hover:text-black"}
             >Blogs</NavLink>
               <NavLink
-            to="/editrole"
+            to="/editblog"
             className={({isActive})=> isActive ? "text-Orange-400 px-[20px] py-[5px] bg-blue-400 rounded-full hover:text-black" : "text-white hover:text-black"}
-            >Edit Role</NavLink>
+            >Create Blog</NavLink>
               <NavLink
             to="/role"
             className={({isActive})=> isActive ? "text-Orange-400 px-[20px] py-[5px] bg-blue-400 rounded-full hover:text-black" : "text-white hover:text-black"}

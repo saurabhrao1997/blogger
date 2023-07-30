@@ -12,7 +12,7 @@ import Register from "./component/Register";
 import Roll from "./component/roll";
 import EditBlogs from "./component/editBlogs";
 import FullDetails from "./component/FullDetails";
-import {RollState} from "./component/roll"
+import {RollState} from "./component/ApiContext/RollState"
 function App() {
 return(
   <>
@@ -28,7 +28,7 @@ return(
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/register" element={< Register/>} />
           <Route exact path="/role" element={<Roll/>} />
-          <Route exact path="/editrole" element={< EditBlogs/>} />
+          <Route exact path="/editblog" element={< EditBlogs/>} />
           
           <Route path="*" element={<NoPage />} />
        
